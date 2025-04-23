@@ -51,7 +51,7 @@ int main(void) //main 함수의 시작
 	//3장 
 
 	//52page
-	printf(" - 52 페이지 - \n");
+	/*printf(" - 52 페이지 - \n");
 
 	int num1, num2;
 	int num3 = 30, num4 = 40;
@@ -59,7 +59,16 @@ int main(void) //main 함수의 시작
 	num1 = 10;
 	num2 = 20;
 	printf("num1 : %d, num2 : %d\n", num1, num2);
-	printf(" num3 : %d, num4 : %d\n", num3, num4);
+	printf(" num3 : %d, num4 : %d\n\n", num3, num4);*/
+
+	//56page 
+	printf(" - 56 페이지 - \n");
+
+	int result;
+	result = 3 + 4;
+	printf("덧셈 결과 : %d\n", result);
+	printf("%d 더하기 %d는 %d 입니다.\n", 3, 4, result);
+	printf("변수 result에 저장된 값 : %d\n\n", result);
 
 	return 0; // 0을 반환한다.
 } //메인 함수의 끝
