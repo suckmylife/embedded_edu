@@ -299,8 +299,10 @@ int main()
 	int sum = 0;
 	while (i < num)
 	{
+		printf("정수 입력 : ");
 		scanf_s("%d", &result);
 		sum = result + sum;
+		i++;
 	}
-	printf("평균 : %d", sum / num);
+	printf("평균 : %lf", (double)sum / num);
 }
