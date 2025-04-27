@@ -145,7 +145,7 @@ int main()
 	
 
 }
-int two_multi(int num)
+int two_multi(int num)//break에서 부터 시작, 쌓았다가 푼다
 {
 	if (num == 0)
 		return 1;
