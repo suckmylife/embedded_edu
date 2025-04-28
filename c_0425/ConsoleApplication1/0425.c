@@ -442,16 +442,29 @@ int main()
 
 //문제1
 //int arr[5];
-//printf("정수 5개를 입력해주세요. ");
-//scanf_s("%d %d %d %d %d ", &arr[0], &arr[1], &arr[2], &arr[3], &arr[4]);
+//printf("정수 5개를 입력해주세요 :");
+//scanf_s("%d %d %d %d %d", &arr[0], &arr[1], &arr[2], &arr[3], &arr[4]);
 //int temp = 0;
-//for (int i = 0; i < sizeof(arr); i++)
-//{
-//    if (arr[i] > arr[i+1])
-//    {
 //
+//for (int i = 0; i < 5; i++)
+//{
+//    for (int j = i+1; j < 5; j++)
+//    {
+//        if (arr[i] < arr[j])
+//        {
+//            temp = arr[i];
+//            arr[i] = arr[j];
+//            arr[j] = temp;
+//        }
 //    }
 //}
+//
+//for (int i = 0; i < 5; i++)
+//{
+//    printf("%d ", arr[i]);
+//}
+
+
 
 //262 page
 //char str[] = "Good morning!";
