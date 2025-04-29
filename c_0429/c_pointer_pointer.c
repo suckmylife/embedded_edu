@@ -42,6 +42,64 @@ int Sum2DArr(int arr[][4], int column)
     return sum;
 }
 
+void SimpleAdder(int n1, int n2)
+{
+    printf("%d + %d = %d \n", n1, n2, n1 + n2);
+}
+
+void ShowString(char* str)
+{
+    printf("%s ", str);
+}
+
+float cal_add(int num1, int num2)
+{
+    return num1 + num2;
+};
+float cal_miuns(int num1, int num2)
+{
+    return num1 = num2;
+};
+float cal_div(int num1, int num2)
+{
+    return num1 / num2;
+};
+float cal_mul(int num1, int num2)
+{
+    return num1 * num2;
+};
+
+void right_90(int (*arr)[4], int column)
+{
+    //[0][3], [1][3], [2][3], [3][3]
+    //[3][0], [3][1], [3][2], [3][3]
+    //[0][0], [1][0], [2][0], [3][0]
+    int a, b;
+ 
+    for (a = 0; a < column; a++)
+    {
+        for (b = 0; b < column; b++)
+            printf(" %d ", arr[a][column-1-b]);
+        printf("\n");
+    }
+
+    for (a = 0; a < column; a++)
+    {
+        for (b = 0; b < column; b++)
+            printf(" %d ", arr[column-1 - a][b]);
+        printf("\n");
+    }
+
+    for (a = 0; a < column; a++)
+    {
+        for (b = 0; b < column; b++)
+            printf(" %d ", arr[column-1-a][column-1 - b]);
+        printf("\n");
+    }
+    
+    
+}
+
 int main()
 {
     //359page 
@@ -179,15 +237,161 @@ int main()
     two : int (*ptr)[4], int (*ptr2)[4]*/
 
     //문제 18-3
-    one : int *(*one) / int  *(*two)[5]
-    two : int **(*one) / int ***(*two)[5]
+    /*one : int *(*one) / int  *(*two)[5]
+    two : int **(*one) / int ***(*two)[5]*/
 
     //문제 18-4
-
+    /*3 2
+    6 4
+    5 2
+    1 1*/
 
     //문제 18-5
-    
+    /*1. *(*(arr+1)+0)[1] (0)
+     *(**arr+1)[1]
+    3. *(arr[1]+0)[1]
+     **arr[0][1]
+     ***arr[1]*/
 
+    //19장 
+    /*printf("  main : %p \n", main);
+    printf("printf : %p \n", printf);
+    printf(" scanf : %p \n", scanf_s);*/
+
+    //394 page
+    /*char* str = "Function Pointer";
+    int num1 = 10, num2 = 20;
+
+    void (*fptr1)(int, int) = SimpleAdder;
+    void (*fptr2)(char*) = ShowString;
+    fptr1(num1, num2);
+    fptr2(str);*/
+    
+    //계산기
+    /*int n1, n2;
+    char op;
+    float result = 0.0;
+    printf("2개 정수 입력 : ");
+    scanf_s("%d %d", &n1, &n2);
+    printf("사칙연산 중 한개 입력 : ");
+    scanf_s("%s", &op,2);
+    float (*funcPtr1) (int, int) = cal_add;
+    float (*funcPtr2) (int, int) = cal_miuns;
+    float (*funcPtr3) (int, int) = cal_mul;
+    float (*funcPtr4) (int, int) = cal_div;
+    switch (op)
+    {
+    case '+':
+        result = funcPtr1(n1, n2);
+        break;
+    case '-':
+        result = funcPtr2(n1, n2);
+        break;
+    case '*':
+        result = funcPtr3(n1, n2);
+        break;
+    case '/':
+        result = funcPtr4(n1, n2);
+        break;
+    }
+
+    printf("%f", result);*/
+
+    //도전1번
+    /*int arr[4][4] = { {1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16} };
+    void (*func)(int, int) = right_90;
+    func(arr, 4);*/
+    //정답
+    /*
+        #include <stdio.h>
+
+int main(void)
+{
+  int arr[4][4], rot[4][4];
+
+  for(int i = 0; i < 4; i++) { 
+    for(int j = 0; j < 4; j++) {
+      printf("%2d ", (j+1)+i*4);
+    }
+    printf("\n");
+  } 
+
+  printf("************\n");
+
+  for(int i = 0; i < 4; i++) { 
+    for(int j = 0; j < 4; j++) {
+      arr[j][4-1-i]=j+1+i*4;
+    }
+  } 
+  for(int i = 0; i < 4; i++) { 
+    for(int j = 0; j < 4; j++) {
+      printf("%2d ", arr[i][j]);
+    }
+    printf("\n");
+  } 
+ 
+  printf("************\n");
+
+  for(int i = 0; i < 4; i++) { 
+    for(int j = 0; j < 4; j++) {
+      rot[j][4-1-i]=arr[i][j];
+    }
+  } 
+  for(int i = 0; i < 4; i++) { 
+    for(int j = 0; j < 4; j++) {
+      printf("%2d ", rot[i][j]);
+    }
+    printf("\n");
+  } 
+ 
+  printf("************\n");
+
+  for(int i = 0; i < 4; i++) { 
+    for(int j = 0; j < 4; j++) {
+      arr[j][4-1-i]=rot[i][j];
+    }
+  } 
+  for(int i = 0; i < 4; i++) { 
+    for(int j = 0; j < 4; j++) {
+      printf("%2d ", arr[i][j]);
+    }
+    printf("\n");
+  } 
+}
+    */
+
+    //420 page
+    /*int ch1, ch2;
+    ch1 = getchar();
+    ch2 = fgetc(stdin);
+    putchar(ch1);
+    fputc(ch2, stdout);*/
+
+    //421
+    /*int ch;
+    while (1)
+    {
+        ch = getchar();
+        if (ch == EOF)
+            break;
+        putchar(ch);
+    }*/
+
+    //문제 21-1
+   /* int ch;
+    int diff = 'a' - 'A';
+    ch = getchar();
+    if (ch == EOF)
+        printf("NULL");
+    else if (ch > 96)
+    {
+        ch -= 32;
+    }
+    else
+    {
+        ch += 32;
+    }
+    putchar(ch);*/
 
     return 0;
 }
