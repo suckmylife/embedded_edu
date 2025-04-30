@@ -13,6 +13,20 @@ struct point
     int ypos;
 };
 
+struct person
+{
+    char name[20];
+    char phoneNum[20];
+    int age;
+};
+
+struct employee
+{
+    char name[BUFSIZ];
+    char number[BUFSIZ];
+    int salary;
+};
+
 int main()
 {
     //21장 424page
@@ -159,6 +173,99 @@ int main()
     distance = sqrt((double)((pos1.xpos - pos2.xpos) * (pos1.xpos - pos2.xpos)) + (pos1.ypos - pos2.ypos) * (pos1.ypos - pos2.ypos));
 
     printf("두점의 거리는 %g 입니다. \n", distance);*/
+
+    /*struct person man1, man2;
+    char names[20] = "안성준";
+    char phone[20] = "010-1122-3344";
+    strncpy_s(man1.name, sizeof(man1.name), names,sizeof(names));
+    strncpy_s(man1.phoneNum, sizeof(man1.phoneNum),phone, sizeof(phone));
+    man1.age = 23;
+
+    printf("이름 입력 : ");
+    scanf_s("%s", man2.name, sizeof(man2.name));
+
+    printf("번호 입력 : ");
+    scanf_s("%s", man2.phoneNum, sizeof(man2.name));
+
+    printf("나이 입력 : ");
+    scanf_s("%d", &(man2.age));
+
+    printf("이름 : %s \n", man1.name);
+    printf("번호 : %s \n", man1.phoneNum);
+    printf("나이 : %d \n", man1.age);
+
+    printf("이름 : %s \n", man2.name);
+    printf("번호 : %s \n", man2.phoneNum);
+    printf("나이 : %d \n", man2.age);*/
+
+
+    //진정한 오류없는 코드
+    /*struct employee em = {0};
+
+    printf("종업원의 이름, 주민번호, 급여 정보 입력 : ");
+    scanf_s("%s %s %d",
+        em.name, (unsigned)_countof(em.name),
+        em.number, (unsigned)_countof(em.number),
+        &em.salary);
+
+
+    printf("입력받은 내용 \n");
+    printf("종업원의     이름 : %s\n", em.name);
+    printf("종업원의 주민번호 : %s\n", em.number);
+    printf("종업원의     급여 : %d\n", em.salary);*/
+
+    //458 page
+   /* struct point pos = { 10,20 };
+    struct person man = { "이승기","010-1212-0001", 21 };
+    printf("%d %d \n", pos.xpos, pos.ypos);
+    printf("%s %s %d \n", man.name, man.phoneNum, man.age);*/
+
+    //461 page
+    /*struct point arr[3];
+    int i;
+    for (i = 0; i < 3; i++)
+    {
+        printf("점의 좌표 입력 : ");
+        scanf_s("%d %d", &arr[i].xpos, &arr[i].ypos);
+    }
+    for (i = 0; i < 3; i++)
+    {
+        printf("[ %d ,%d ]", arr[i].xpos,arr[i].ypos);
+    }*/
+
+   /* struct person arr[3] = {
+        {"이승기", "123-456-789",21},
+        {"정지졍", "010-1111-789",21},
+        {"한지수", "011-000-789",21}
+    };
+    int i;
+    for (i = 0; i < 3; i++)
+    {
+        printf("%s %s %d \n", arr[i].name, arr[i].phoneNum,arr[i].age);
+    }*/
+
+    //문제 22-2
+    /*struct employee arr[3] = { 0 };
+    
+    for (int i = 0; i < 3; i++)
+    {
+        printf("종업원의 이름, 주민번호, 연봉 입력 : ");
+        scanf_s("%s %s %d", arr[i].name, (unsigned)_countof(arr[i].name),
+            arr[i].number, (unsigned)_countof(arr[i].number), &arr[i].salary);
+    }
+
+    for (int i = 0; i < 3; i++)
+    {
+        printf("%d 번째 종업원 정보\n",i+1);
+        printf("이름 : %s \n", arr[i].name);
+        printf("번호 : %s\n", arr[i].number);
+        printf("연봉 : %d\n\n", arr[i].salary);
+    }*/
+
+    
+
+
+
 
     return 0;
 }
