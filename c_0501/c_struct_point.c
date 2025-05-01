@@ -1,4 +1,5 @@
 ﻿#include <stdio.h>
+#include <string.h>
 void ClearLineFromReadBuffer(void)
 {
     while (getchar() != '\n');
@@ -132,6 +133,13 @@ typedef union rdbuf
     char bBuf[4];
     DBShort sBuf;
 }RDBuf;
+
+typedef struct
+{
+    char name[20];
+    char num1[20];
+    char num2[20];
+} Mystory;
 
 typedef enum syllable
 {
@@ -346,8 +354,92 @@ int main()
         printf("%c\n",ch);
     }
     fclose(fp);*/
+    //517page
+    /*FILE* src = fopen("src.txt", "rt");
+    FILE* des = fopen("dst.txt", "wt");
+    int ch;
+    if (src == NULL || des == NULL)
+    {
+        printf("파일 오픈 실패!");
+        return -1;
+    }
 
+    while ((ch = fgetc(src)) != EOF)
+        fputc(ch, des);
+
+    if (feof(src) != 0)
+        puts("복사완료");
+    else
+        puts("복사 실패");
+    fclose(src);
+    fclose(des);*/
+    /*FILE* src = fopen("src.txt", "rt");
+    FILE* des = fopen("dst.txt", "wt");
+    char str[20];
+    if (src == NULL || des == NULL)
+    {
+        printf("파일 오픈 실패!");
+        return -1;
+    }
+
+    while (fgets(str,sizeof(str),src)!=NULL)
+        fputs(str, des);
+
+    if (feof(src) != 0)
+    puts("복사완료");
+    else
+    puts("복사 실패");
+    fclose(src);
+    fclose(des);*/
     
+    //520 page
+    /*FILE* src = fopen("src.txt", "rb");
+    FILE* des = fopen("dst.txt", "wb");
+    char buf[20];
+    int readCnt;
+    if (src == NULL || des == NULL)
+    {
+        printf("파일 오픈 실패!");
+        return -1;
+    }
+
+    while (1)
+    {
+        readCnt = fread((void*)buf, 1, sizeof(buf), src);
+        if (readCnt < sizeof(buf))
+        {
+            if (feof(src) != 0)
+            {
+                fwrite((void*)buf, 1, readCnt, des);
+                puts("파일 복사 완료");
+                break;
+            }
+            else
+                puts("파일복사 실패");
+            break;
+        }
+        fwrite((void*)buf, 1, sizeof(buf), des);
+    }
+    fclose(src);
+    fclose(des);*/
+    //522 page 문제 24-1-1
+    /*FILE* my = fopen("mystory.txt", "wb");
+    if (my == NULL)
+    {
+        printf("파일 오픈 실패");
+        return -1;
+    }
+
+    Mystory info = {"kelly", "123456-1234567", "010-1234-1234"};
+    
+    fwrite((void*)info.name, sizeof(info.name),strlen(info.name), my);
+    fwrite((void*)info.num1, sizeof(info.num1), strlen(info.num1), my);
+    fwrite((void*)info.num2, sizeof(info.num2), strlen(info.num2), my);
+
+    fclose(my);*/
+
+
+
 
     return 0;
 }
