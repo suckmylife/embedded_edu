@@ -1,5 +1,12 @@
 ﻿
 #include <stdio.h>
+
+
+//588 pagg
+//int main(void)
+//#include "header1.h"
+//#include "header2.h"
+
 //char name[30];
 typedef struct
 {
@@ -33,16 +40,35 @@ char* ReadUserName(void)
 
 //#define ADD 1
 #define MIN 0
-//int DiffABS(int a, int b)
-//{
-//    if (a > b)
-//        return a - b;
-//    else
-//        return b - a;
-//}
-//#define DiffABS(X,Y) ((X)>(Y) ? (X)-(Y) : (Y)-(X))
+int DiffABS(int a, int b)
+{
+    if (a > b)
+        return a - b;
+    else
+        return b - a;
+}
+#define DiffABS(X,Y) ((X)>(Y) ? (X)-(Y) : (Y)-(X))
 #define HIT_NUM 5
 #define STRING_JOB(A, B) #A "의 직업은 " #B "입니다"
+
+//#define STNUM(Y, S, P) YSP
+//#define STNUM(Y, S, P) Y S P
+#define STNUM(Y, S, P) ((Y)*100000+(S)*1000+(P))
+#define PLUS(A,B,C) ((A)+(B)+(C))
+#define MULTI(A,B,C) ((A)*(B)*(C))
+#define AREA(A) ((A)*(A)*(PI))
+#define MAX(A,B) (((A)>(B)) ? (A) : (B))
+
+//int num = 0;
+//void Increment(void)
+//{
+//    num++;
+//}
+//int GetNum(void)
+//{
+//    return num;
+//}
+
 int main()
 {
     //524 page
@@ -59,8 +85,8 @@ int main()
         getchar();
         fprintf(fp, "%s %c %d", name, sex, age);
     }
-    */
-    /*int ret;
+    
+    int ret;
     while (1)
     {
         ret = fscanf_s(fp, "%s %c %d", name, (unsigned)_countof(name), &sex, (unsigned)_countof(&sex), &age);
@@ -69,7 +95,6 @@ int main()
         printf("%s %c %d \n", name, sex, age);
     }
     fclose(fp);*/
-
     //526 page
    /* Friend myfri1;
     Friend myfri2;
@@ -106,7 +131,6 @@ int main()
     putchar(fgetc(fp));
 
     fclose(fp);*/
-
     //542 page
     /*char* name1;
     char* name2;
@@ -114,8 +138,8 @@ int main()
     name1 = ReadUserName();
     printf("name1 : %s \n", name1);
     name2 = ReadUserName();
-    printf("name2 : %s \n", name2);*/
-   /* char* name1;
+    printf("name2 : %s \n", name2);
+    char* name1;
     char* name2;
 
     name1 = ReadUserName();
@@ -125,7 +149,6 @@ int main()
 
     printf("name1 : %s \n", name1);
     printf("name2 : %s \n", name2);*/
-
     //546 page 안됨
     /*int* ptr1 = (int*)malloc(sizeof(int));
     int* ptr2 = (int*)malloc(sizeof(int)*7);
@@ -141,7 +164,6 @@ int main()
     
     free(ptr1);
     free(ptr2);*/
-
     //548 page 안됨
     /*char* name1;
     char* name2;
@@ -155,7 +177,6 @@ int main()
 
     free(name1);
     free(name2);*/
-
     /*int n;
     char* str, * tmp;
 
@@ -182,12 +203,10 @@ int main()
 
     free(str);
     free(tmp);*/
-
     //559 page
    /* printf("이름 : %s \n", NAME);
     printf("나이 : %d \n", NAME);
     PRINT_ADDR*/
-
     //560 page
     /*int num = 20;
     printf("num : %d \n", SQUARE(num));
@@ -195,7 +214,6 @@ int main()
     printf("2.5 : %g \n", SQUARE(2.5));
 
     printf("3+2 : %d \n", SQUARE(3+2));*/
-
     //563page
     /*double rad = 2.1;
     printf("반지름 %g 인 원의 넓이 : %g \n", rad, CIRCLE_AREA(rad));*/
@@ -203,7 +221,6 @@ int main()
     //565 page
     //printf("두 값의 차 : %d \n", DiffABS(5, 7));
     //printf("두 값의 차 : %g \n", DiffABS(1.8, -1.4));
-
     //int num1, num2;
     //printf("두개의 정수 입력 : ");
     //scanf_s("%d %d", &num1, &num2);
@@ -228,7 +245,6 @@ int main()
 //#else
 //    puts("매크로 상수 HIT_NUM은 현재 5가 아닙니다");
 //#endif
-
 //#if HIT_NUM == 7
 //    puts("매크로 상수 HIT_NUM은 현재 7입니다");
 //#elif HIT_NUM == 6
@@ -238,10 +254,32 @@ int main()
 //#else
 //    puts("매크로 상수 HIT_NUM은 5,6,7이 아닙니다");
 //#endif
-
 //573 page
 //printf("%s \n", STRING_JOB(이동춘, 나무꾼));
 //printf("%s \n", STRING_JOB(한상순, 사냥꾼));
+    //574 page
+    //printf("학번 : %d \n", STNUM(10, 65, 175));
+    //printf("학번 : %d \n", STNUM(10, 65, 075));
+
+    //576 문제 26-1-1
+    //int a, b, c;
+    //printf("세개의 정수 입력 : ");
+    //scanf_s("%d %d %d", &a, &b, &c);
+    //printf("덧셈 : %d \n", PLUS(a,b,c));
+    //printf("곱셈 : %d \n", MULTI(a,b,c));
+
+    //580page
+    /*printf("num : %d \n", GetNum());
+    Increment();
+    printf("num : %d \n", GetNum());
+    Increment();
+    printf("num : %d \n", GetNum());*/
+    //extern 적용 후
+    /*printf("num : %d \n", GetNum());
+    Increment();
+    printf("num : %d \n", GetNum());
+    Increment();
+    printf("num : %d \n", GetNum());*/
 
     return 0;
 }

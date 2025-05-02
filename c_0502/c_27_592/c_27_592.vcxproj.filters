@@ -15,21 +15,27 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="c_memory.c">
+    <ClCompile Include="main.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="num.c">
+    <ClCompile Include="basicArith.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="func.c">
+    <ClCompile Include="roundArith.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="areaArith.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="header1.h">
+    <ClInclude Include="basicArith.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
-    <ClInclude Include="header2.h">
+    <ClInclude Include="roundArith.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="areaArith.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>
