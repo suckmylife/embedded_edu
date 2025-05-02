@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="c_0502.cpp">
+    <ClCompile Include="c_memory.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
