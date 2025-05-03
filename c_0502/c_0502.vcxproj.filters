@@ -15,8 +15,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="0425.c">
+    <ClCompile Include="c_memory.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="num.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="func.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="header1.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="header2.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
