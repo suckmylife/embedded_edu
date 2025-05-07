@@ -55,7 +55,7 @@ Point GetCurrentPosition(void)
 {
     Point cen;
     printf("Input current pos : ");
-    scanf_s("%d %d", &cen.xpos, &cen.ypos);
+    //scanf_s("%d %d", &cen.xpos, &cen.ypos);
     return cen;
 }
 
@@ -181,7 +181,12 @@ typedef unsigned int UINT;
 typedef unsigned int* PTR_UNIT;
 typedef unsigned char UCHAR;
 typedef unsigned char *PTR_UCHAR;
-
+typedef struct
+{
+    char name[10];
+    char sex;
+    int age;
+} Friend;
 int main()
 {
     //464 page
@@ -437,7 +442,19 @@ int main()
     fwrite((void*)info.num2, sizeof(info.num2), strlen(info.num2), my);
 
     fclose(my);*/
+    Friend myfri1;
+    Friend myfri2;
 
+    FILE* fp = fopen("friend.bin", "wb");
+    printf("이름 성별 나이 순 입력 : ");
+    scanf_s("%s %c %d", myfri1.name, sizeof(myfri1.name), &(myfri1.sex), sizeof(&(myfri1.sex)), &(myfri1.age), sizeof(&(myfri1.age)));
+    fwrite((void*)&myfri1,sizeof(myfri1),1,fp);
+    fclose(fp);
+
+    fp = fopen( "friend.bin", "rb");
+    fread((void*)&myfri2, sizeof(myfri2), 1, fp);
+    printf("%s %c %d \n", myfri2.name, myfri2.sex, myfri2.age);
+    fclose(fp);
 
 
 
