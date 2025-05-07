@@ -18,28 +18,5 @@
     <ClCompile Include="main.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="intdiv.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="intdiv2.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="intdiv3.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="intdiv4.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="stdiv.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="stdiv2.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="intdiv4.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
