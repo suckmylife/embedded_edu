@@ -38,6 +38,13 @@ namespace AAA{
     }
 }
 
+int f()
+{
+    return 20+30;
+}
+
+enum Days{SUN,MON,TUE,WED,THU,FRI,SAT};
+
 int main()
 {
     //52page
@@ -124,6 +131,94 @@ int main()
     // j = temp;
     // cout << "Swap!!"<<endl;
     // cout << "i :" << i << " j : " <<j<<endl;
+
+    //46page
+    // bool a = true;
+
+    // cout << "a : "<<a <<endl;
+    // a=false;
+    // cout << "a : "<<a <<endl;
+    // a= -98;
+    // cout << "a : "<<a <<endl;
+    // a=0;
+    // cout << "a : "<<a <<endl;
+
+    //68page
+    // int num =10;
+    // int &ref = num;
+    // cout << "num = " << num << endl;
+    // cout << "ref = " << ref << endl;
+
+    // ref = 100;
+    // cout << "ref = 100 , num = " << num << endl;
+    // cout << "ref = 100 , ref = " << ref << endl;
+
+    // cout << "&num = " << &num << endl;
+    // cout << "&ref = " << &ref << endl;
+
+    //73 page
+    // int val1 = 100;
+    // int &val2 = val1;
+    // //int &val3 = 200; //선언조차 안됨
+    // int &val4 = val2;
+    // //int &val5;
+
+    // val1 = val1*3;
+
+    // cout << "val 1 = " << val1 << endl;
+    // cout << "val 2 = " << val2 << endl;
+    // cout << "val 4 = " << val4 << endl;
+
+    //78 page
+    // int num =12;
+    // int *ptr =&num;
+    // int **dptr = &ptr;
+
+    // int &ref = num;
+    // int *(&pref) = ptr;
+    // int **(&dpref) = dptr;
+    // ptr = ptr +1;
+    // cout << "ref : " << ref << endl;
+    // cout << "*pref : " << *pref << endl;
+    // cout << "**dpref : " << **dpref << endl;
+
+    //84 page
+    // int n = 1234;
+    // double d = 1.231;
+
+    // auto autoval1 = d;
+    // auto autoval2 = n;
+    // auto autoval3 = n + d;
+    // autoval3 = 1.234;
+
+    // cout << "autoval1 : " << autoval1 << endl;
+    // cout << "autoval2 : " << autoval2 << endl;
+    // cout << "autoval3 : " << autoval3 << endl;
+
+    //85 page
+    // double d = 1.414;
+    // decltype(f()) decval1 = d;
+    // decltype(d) decval2 = decval1;
+    // decltype((d)) decval3 = decval2;
+    // decval2 = 3.141592;
+
+    // cout << "&decval1 : " << &decval1 <<endl;
+    // cout << "&decval2 : " << &decval2 <<endl;
+    // cout << "&decval3 : " << &decval3 <<endl;
+
+    // cout << "decval1 : " << decval1 <<endl;
+    // cout << "decval2 : " << decval2 <<endl;
+    // cout << "decval3 : " << decval3 <<endl;
+
+    //93 page
+    // int i;
+    // printf("input the date(0~6) :");
+    // scanf("%d", &i);
+
+    // if(i == SUN || i == SAT)
+    //     printf("Thanks god it's holiday \n");
+    // else
+    //     printf("whoops, it's working day \n");
 
     //cout.flush();
     system("pause"); //process exited with code : 0. 의 순서를 맨 뒤로 가게 하는 법
