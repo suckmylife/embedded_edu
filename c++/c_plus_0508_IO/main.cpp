@@ -196,19 +196,19 @@ int main()
     // cout << "autoval3 : " << autoval3 << endl;
 
     //85 page
-    // double d = 1.414;
-    // decltype(f()) decval1 = d;
-    // decltype(d) decval2 = decval1;
-    // decltype((d)) decval3 = decval2;
-    // decval2 = 3.141592;
+    double d = 1.414;
+    decltype(f()) decval1 = d;
+    decltype(d) decval2 = decval1;
+    decltype((d)) decval3 = decval2;
+    decval2 = 3.141592;
 
-    // cout << "&decval1 : " << &decval1 <<endl;
-    // cout << "&decval2 : " << &decval2 <<endl;
-    // cout << "&decval3 : " << &decval3 <<endl;
+    cout << "&decval1 : " << &decval1 <<endl;
+    cout << "&decval2 : " << &decval2 <<endl;
+    cout << "&decval3 : " << &decval3 <<endl;
 
-    // cout << "decval1 : " << decval1 <<endl;
-    // cout << "decval2 : " << decval2 <<endl;
-    // cout << "decval3 : " << decval3 <<endl;
+    cout << "decval1 : " << decval1 <<endl;
+    cout << "decval2 : " << decval2 <<endl;
+    cout << "decval3 : " << decval3 <<endl;
 
     //93 page
     // int i;
