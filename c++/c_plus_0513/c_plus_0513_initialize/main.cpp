@@ -378,6 +378,7 @@ int main()
     // cout<< "ar3.getNum : " << ar3.getNum() << endl; //이동생성자
 
 
+
     system("pause");
     return 0;
 }
