@@ -45,6 +45,8 @@ IPC : 프로세스간 통신 (운영체제 차원에서 제공하는 통신 방�
 
 나중에><
 
+please go on
+
 
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=D0F0C0&height=150&section=footer" />
