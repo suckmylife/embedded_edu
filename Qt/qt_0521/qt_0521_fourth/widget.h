@@ -10,6 +10,13 @@
 #include<QCalendarWidget>
 #include<QTextEdit>
 #include<QStackedLayout>
+#include<QGroupBox>
+#include<QFormLayout>
+#include<QtWidgets>
+#include<QTabWidget>
+#include<QToolBox>
+#include<QSplitter>
+
 #define NO_OF_ROW 3
 class Widget : public QWidget
 {

@@ -62,6 +62,47 @@ Widget::Widget(QWidget *parent)
     // hBoxLayout->addLayout(stackedLayout);
     // setLayout(hBoxLayout);
 
+    //28page
+    // QStringList labels;
+    // labels << "&IP Address" << "&MAC Address" << "&Date";
+    // QLineEdit* lineEdit[3];
+    // QFormLayout *formLayout = new QFormLayout;
+    // for(int i = 0; i< 3; i++){
+    //     lineEdit[i] = new QLineEdit(this);
+    //     formLayout->addRow(labels.at(i),lineEdit[i]);
+    // }
+    // QGroupBox *groupBox = new QGroupBox("&Widget Group",this);
+    // groupBox->move(5,5);
+    // groupBox->setLayout(formLayout);
+    // resize(groupBox->sizeHint().width()+10,
+    //        groupBox->sizeHint().height()+10);
+
+    //31page
+    // QDial *dial = new QDial(this);
+    // QCalendarWidget *calendarWidget = new QCalendarWidget(this);
+    // QTextEdit *textEdit = new QTextEdit("Tab 3", this);
+
+    // QTabWidget *tabWidget = new QTabWidget(this);
+    // tabWidget->addTab(dial,"Tab &1");
+    // tabWidget->addTab(calendarWidget, "Tab2 &2");
+    // tabWidget->addTab(textEdit, "Tab &3");
+
+    // resize(tabWidget->sizeHint());
+
+    //34 page
+    // QLabel *label = new QLabel("&Value",this);
+    // QDial *dial1 = new QDial(this);
+    // QDial *dial2 = new QDial(this);
+    // label->setBuddy(dial2);
+
+    // QSplitter *splitter = new QSplitter(this);
+    // splitter->addWidget(label);
+    // splitter->addWidget(dial1);
+    // splitter->addWidget(dial2);
+
+    // resize(splitter->sizeHint());
+
+
 }
 
 Widget::~Widget() {}
