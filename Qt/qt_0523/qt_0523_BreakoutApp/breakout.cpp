@@ -95,7 +95,7 @@ void Breakout::checkCollision(){
         int fourth = paddleLPos + 32;
 
         //공이 맞고 나가는 방향 조정
-        if(ballLPos < first) xDir = -1; yDir=-1;
+        if(ballLPos < first) {xDir = -1; yDir=-1;}
         if(ballLPos >= first && ballLPos < second){ xDir = -1; yDir*=-1;};
         if(ballLPos >= second && ballLPos < third){ xDir = 0; yDir=-1;};
         if(ballLPos >= third && ballLPos < fourth){ xDir = 1; yDir*=-1;};
@@ -105,7 +105,7 @@ void Breakout::checkCollision(){
     //블록 충돌처리
     for(int i =0; i< NO_OF_BRICKS; i++){
         if((ball->geometry()).intersects(bricks[i]->geometry())){
-            isCollision = true;
+
             int ballLeft = ball->geometry().left();
             int ballHeight = ball->geometry().height();
             int ballWidth = ball->geometry().width();
@@ -117,11 +117,13 @@ void Breakout::checkCollision(){
             QPoint pointBottom(ballLeft,ballTop+ballHeight+1);
             //공과 블록의 충돌검사
             if(!bricks[i]->isHidden()){
-                if(bricks[i]->geometry().contains(pointRight)) xDir = -1;
-                else if(bricks[i]->geometry().contains(pointLeft)) xDir = 1;
-                if(bricks[i]->geometry().contains(pointTop))yDir = 1;
-                else if(bricks[i]->geometry().contains(pointBottom))yDir = -1;
+                if(bricks[i]->geometry().contains(pointRight)) {xDir = -1;}
+                else if(bricks[i]->geometry().contains(pointLeft)) {xDir = 1; }
+                if(bricks[i]->geometry().contains(pointTop)){yDir = 1;}
+                else if(bricks[i]->geometry().contains(pointBottom)){yDir = -1;}
                 bricks[i]->setHidden(true);
+                isCollision = true;
+                break;
             }
         }
     }
