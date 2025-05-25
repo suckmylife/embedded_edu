@@ -43,10 +43,6 @@ IPC : 프로세스간 통신 (운영체제 차원에서 제공하는 통신 방�
 9-43 임베디드 엔지니어의 학습방법
 수파리 이론(선배들꺼를 잘 흡수해서 내꺼로 만들자)
 
-05
-
-please go on
-
-today edit
+today edit ><
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=D0F0C0&height=150&section=footer" />
