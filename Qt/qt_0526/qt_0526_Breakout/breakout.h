@@ -4,7 +4,12 @@
 #include <QWidget>
 #include <QMouseEvent>
 #include <QKeyEvent>
-
+//33page
+#include <QMediaPlayer>
+//12장22page
+#include "ball.h"
+#include "brick.h"
+#include "paddle.h"
 class QLabel;
 
 class Breakout : public QWidget
@@ -12,9 +17,9 @@ class Breakout : public QWidget
     Q_OBJECT
 private:
     static const int NO_OF_BRICKS = 30;
-    QLabel *ball;
-    QLabel *paddle;
-    QLabel *bricks[NO_OF_BRICKS];
+    Ball *ball;
+    Paddle *paddle;
+    Brick *bricks[NO_OF_BRICKS];
     QLabel *score_;
     QLabel *life;
     QString L ="";
@@ -23,6 +28,10 @@ private:
     int score;
     int lifeCycle;
     bool isCollision;
+    //33page
+    QMediaPlayer *bgPlayer;
+    QMediaPlayer *effectPlayer;
+
 public:
     Breakout(QWidget *parent = nullptr);
     ~Breakout();

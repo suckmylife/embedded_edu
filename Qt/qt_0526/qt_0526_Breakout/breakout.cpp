@@ -1,6 +1,7 @@
 #include "breakout.h"
 #include <QLabel>
 #include <QApplication>
+#include <QtMultimedia>
 #define WIDTH 50
 #define HEIGHT 12
 #define SCR_WIDTH 300
@@ -13,24 +14,38 @@ Breakout::Breakout(QWidget *parent)
     score_->setGeometry(100,100,SCR_WIDTH/2,SCR_HEIGHT/2);
     life = new QLabel(this);
     life->setGeometry(100,100,SCR_WIDTH/3,SCR_HEIGHT/3);
-    ball = new QLabel(this);
+    ball = new Ball(this);
     ball->setGeometry(SCR_WIDTH*0.8,SCR_HEIGHT*0.875,10,10);
-    ball->setStyleSheet("QLabel{background-color:red;border-radius:5px;}");
 
-    paddle = new QLabel(this);
+    paddle = new Paddle(this);
     paddle->setGeometry(SCR_WIDTH*0.7,SCR_HEIGHT*0.9,WIDTH,HEIGHT);
-    paddle->setStyleSheet("QLabel{background-color:blue;}");
 
     for(int y = 0,i=0; y < 5; y++)
         for(int x = 0; x<6; x++,i++){
-            bricks[i] = new QLabel(this);
-            bricks[i]->setStyleSheet("QLabel{background-color:cyan;"
-                                     "border:1px solid black;}");
+            bricks[i] = new Brick(this);
             bricks[i]->setGeometry(x*WIDTH,y*HEIGHT+30,WIDTH,HEIGHT);
         }
     resize(SCR_WIDTH,SCR_HEIGHT);
     setMouseTracking(true);
     timerId = startTimer(10);
+
+    //33page
+    QAudioOutput *bgAudioOutput = new QAudioOutput;
+    bgAudioOutput->setVolume(10);
+
+    bgPlayer = new QMediaPlayer();
+    bgPlayer->setAudioOutput(bgAudioOutput);
+    bgPlayer->setLoops(QMediaPlayer::Infinite);
+    bgPlayer->setSource(QUrl::fromLocalFile(QFileInfo("background.wav").absoluteFilePath()));
+    bgPlayer->play();
+
+    QAudioOutput *bgEffectOutput = new QAudioOutput;
+    bgEffectOutput->setVolume(200);
+
+    effectPlayer = new QMediaPlayer();
+    effectPlayer->setAudioOutput(bgEffectOutput);
+    effectPlayer->setLoops(QMediaPlayer::Once);
+    effectPlayer->setSource(QUrl::fromLocalFile(QFileInfo("effect.wav").absoluteFilePath()));
 
 }
 void Breakout::keyPressEvent(QKeyEvent* e){
@@ -69,7 +84,6 @@ void Breakout::timerEvent(QTimerEvent*){
     if(lifeCycle>0)
     {
         score_->setText("Score : "+QString::number(score));
-        //life->setText("Life : "+QString::number(lifeCycle));
         life->setText("Life : "+L);
     }
 }
@@ -120,6 +134,8 @@ void Breakout::checkCollision(){
         if(ballLPos >= second && ballLPos < third){ xDir = 0; yDir=-1;};
         if(ballLPos >= third && ballLPos < fourth){ xDir = 1; yDir*=-1;};
         if(ballLPos > fourth) {xDir = 1; yDir=-1;}
+        effectPlayer->stop();
+        effectPlayer->play();
     }
 
     //블록 충돌처리
@@ -142,6 +158,8 @@ void Breakout::checkCollision(){
                 if(bricks[i]->geometry().contains(pointTop)){yDir = 1;}
                 else if(bricks[i]->geometry().contains(pointBottom)){yDir = -1;}
                 bricks[i]->setHidden(true);
+                effectPlayer->stop();
+                effectPlayer->play();
                 //충돌 시점 감지
                 isCollision = true;
                 break;
