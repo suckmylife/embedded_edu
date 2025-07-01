@@ -2,8 +2,12 @@
 #define WIDGET_H
 
 #include <QWidget>
-#include <QPainter>
-#include <QSvgWidget>
+
+QT_BEGIN_NAMESPACE
+namespace Ui {
+class Widget;
+}
+QT_END_NAMESPACE
 
 class Widget : public QWidget
 {
@@ -12,7 +16,11 @@ class Widget : public QWidget
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
-protected:
-    void paintEvent(QPaintEvent *event) override;
+
+private slots:
+    void on_lineEdit_textChanged(const QString &arg1);
+
+private:
+    Ui::Widget *ui;
 };
 #endif // WIDGET_H

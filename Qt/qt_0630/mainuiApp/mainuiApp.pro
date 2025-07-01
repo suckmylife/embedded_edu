@@ -1,4 +1,4 @@
-QT       += core gui svg svgwidgets
+QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -10,10 +10,18 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    widget.cpp
+    mainwindow.cpp
 
 HEADERS += \
-    widget.h
+    mainwindow.h
+
+FORMS += \
+    mainwindow.ui
+
+TRANSLATIONS += \
+    mainuiApp_ko_KR.ts
+CONFIG += lrelease
+CONFIG += embed_translations
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
